@@ -67,6 +67,7 @@ if uploaded_files:
 
             st.success("Arquivo processado com sucesso ✅")
             st.dataframe(df_merge)
+            st.text("teste")
 
             # --- CSV ---
             csv = df_merge.to_csv(index=False).encode('utf-8')
