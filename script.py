@@ -31,13 +31,20 @@ if uploaded_files:
             df = df.dropna()
             df['ID'], df['Nome_Produto'] = df['Produto'].str.extract(r'^(\d+)\s+(.*)', expand=True).T.values
             df_final = df[['ID', 'Quantidade_corrigido']]
+<<<<<<< Updated upstream
+=======
+            df_merge = pd.merge(df_total, df_final, on='ID', how='left')
+            df_merge = df_merge.fillna(0)
+>>>>>>> Stashed changes
             # --------------------------------------------
 
             st.success("Arquivo processado com sucesso ✅")
             st.dataframe(df_final)
+            st.dataframe(df_merge)
 
             # --- CSV ---
             csv = df_final.to_csv(index=False).encode('utf-8')
+            csv = df_merge.to_csv(index=False).encode('utf-8')
             nome_base = uploaded_file.name.replace(".csv", "")
             nome_csv = f"{nome_base}_tratado.csv"
 
