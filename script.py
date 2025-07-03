@@ -11,7 +11,7 @@ def tratar_coluna(numero):
     except:
         return np.nan
 
-st.title("💊 Tratamento de Arquivos de Produtos")
+st.title("💊 Tratamento posição de estoque - Sistema MV")
 
 # Upload de múltiplos arquivos
 uploaded_files = st.file_uploader("Envie um ou mais arquivos CSV", type="csv", accept_multiple_files=True)
