@@ -66,7 +66,6 @@ if uploaded_files:
             # --------------------------------------------
 
             st.success("Arquivo processado com sucesso ✅")
-            st.dataframe(df_final)
             st.dataframe(df_merge)
 
             # --- CSV ---
